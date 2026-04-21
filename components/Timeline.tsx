@@ -10,10 +10,10 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
   return (
     <div className="space-y-6">
       {items.map((item, idx) => (
-        <div key={idx} className="rounded-2xl border p-6">
+        <div key={idx} className="rounded-2xl border border-[#0f172a]/10 bg-white/85 p-6">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <div>
-              <h3 className="font-semibold">{item.title}</h3>
+              <h3 className="font-semibold text-[#0f172a]">{item.title}</h3>
               <p className="text-sm text-gray-600">
                 {item.org}{item.location ? ` • ${item.location}` : ""}
               </p>

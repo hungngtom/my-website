@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,23 +15,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hung Nguyen - Data Analyst",
-  description: "Portfolio, projects, and blog of Hung Nguyen, a data analyst passionate about data science and technology.",
+  title: "Hung Nguyen | Data & Business Analyst",
+  description: "Projects, portfolio, writings and all things data science by Hung Nguyen.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 text-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f7f2e8] text-[#0f172a]`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
